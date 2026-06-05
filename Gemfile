@@ -52,6 +52,15 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Testing framework [https://github.com/rspec/rspec-rails]
+  gem "rspec-rails"
+
+  # Test data factories [https://github.com/thoughtbot/factory_bot_rails]
+  gem "factory_bot_rails"
+
+  # Fake data generator for factories [https://github.com/faker-ruby/faker]
+  gem "faker"
 end
 
 group :development do
@@ -59,4 +68,8 @@ group :development do
   gem "web-console"
 end
 
+# Tailwind CSS integration for Rails with standalone CLI [https://github.com/rails/tailwindcss-rails]
 gem "tailwindcss-rails", "~> 4.4"
+
+# View components for building reusable UI [https://viewcomponent.org]
+gem "view_component"
