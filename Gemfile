@@ -66,6 +66,9 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # htmlbeautifier for better readability of generated HTML in development
+  gem "htmlbeautifier"
 end
 
 # Tailwind CSS integration for Rails with standalone CLI [https://github.com/rails/tailwindcss-rails]
