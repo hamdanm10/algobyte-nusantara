@@ -109,6 +109,45 @@ Use **RSpec**. Place specs under `spec/` following the standard convention:
 
 **Linting style**: RuboCop uses `rubocop-rails-omakase` (Basecamp's opinionated defaults). Override rules in `.rubocop.yml`.
 
+## Commit Message Convention
+
+Format:
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+- Header is mandatory; scope is optional. Max 100 characters per line.
+- Subject: imperative present tense, no capital first letter, no trailing period.
+- Body: explain *why*, not what. Contrast with previous behavior.
+- Footer: use `BREAKING CHANGE:` prefix for breaking changes; reference closed issues.
+
+**Types:**
+
+| Type | When to use |
+|------|-------------|
+| `feat` | New feature |
+| `fix` | Bug fix |
+| `refactor` | Code restructuring (no feature/fix) |
+| `perf` | Performance improvement |
+| `style` | Formatting, whitespace (no logic change) |
+| `test` | Adding or correcting tests |
+| `docs` | Documentation only |
+| `build` | Build system or dependency changes |
+| `ci` | CI configuration changes |
+
+**Examples:**
+```
+feat(invoice): add PDF export for client invoices
+
+fix(auth): redirect to login when session expires
+
+refactor(project): extract creation logic into CreateService
+```
+
 ## Deployment
 
 Deployed via Kamal. Container image registry is at `localhost:5555`. `RAILS_MASTER_KEY` is injected as a secret.
