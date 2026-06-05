@@ -67,13 +67,63 @@ end
 
 Keep controllers as thin as possible — only handle params, call a service, then render/redirect.
 
+Pages that do not require authentication live under `app/controllers/public/` and inherit from `Public::PublicController`. This base controller sets the `public_application` layout automatically.
+
+```
+app/controllers/public/public_controller.rb   ← base for all public pages
+app/controllers/public/home_controller.rb     ← example public controller
+app/views/layouts/public_application.html.erb ← layout for public pages
+app/views/public/home/index.html.erb          ← views follow the same namespace
+```
+
+### Routes
+
+Routes are split by authentication requirement. `config/routes.rb` loads each file via `draw`:
+
+```ruby
+# config/routes.rb
+Rails.application.routes.draw do
+  draw :public   # loads config/routes/public.rb
+end
+```
+
+| File | Purpose |
+|------|---------|
+| `config/routes/public.rb` | Pages that do not require authentication |
+
+Add new route files to `config/routes/` and load them with `draw :<name>` in `routes.rb`.
+
+Prefer `resources` / `resource` over manual route definitions (`get`, `post`, `delete`, etc.). Always use `only:` or `except:` to limit to the actions actually needed.
+
+```ruby
+# preferred
+resources :projects, only: [:index, :show]
+resource :profile, only: [:show, :edit, :update]
+
+# avoid unless no REST mapping fits
+get "about", to: "public/pages#about"
+```
+
+`root` is the one exception — it must always be defined explicitly.
+
 ### View Components
 
 UI components are built with **ViewComponent**. Do not write presentation logic directly in ERB partials.
 
+Components are grouped by context to keep public and authenticated styles separate:
+
+```
+app/components/public/           ← components for public pages
+app/components/application/      ← components for authenticated pages
+```
+
 ```ruby
-# app/components/card_component.rb
-class CardComponent < ViewComponent::Base
+# app/components/public/card_component.rb
+class Public::CardComponent < ViewComponent::Base
+end
+
+# app/components/application/card_component.rb
+class Application::CardComponent < ViewComponent::Base
 end
 ```
 
