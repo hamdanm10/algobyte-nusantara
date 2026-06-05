@@ -1,4 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @import "tailwindcss";
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
 @source "../../../node_modules/flowbite";
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(229 231 235 / 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(229 231 235 / 0.6) 1px, transparent 1px);
+  background-size: 160px 160px;
+}
+
+@theme {
+  --font-sans: "Lato", sans-serif;
+}
