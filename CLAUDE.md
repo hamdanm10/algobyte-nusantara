@@ -83,6 +83,13 @@ end
 - JavaScript logic goes in **Stimulus controllers** (`app/javascript/controllers/`), never inline in views.
 - Install JS packages via importmap: `bin/importmap pin <package>`
 
+### Package Installation
+
+- **JavaScript** (browser delivery): use importmap — `bin/importmap pin <package>`
+- **CSS build dependencies** (e.g. Tailwind plugins, Flowbite): use **bun** — `bun add <package>`
+
+Bun is used only for the Tailwind CSS build step (not for bundling JS). This keeps the importmap approach intact while allowing Tailwind plugins like Flowbite to be available locally via `node_modules`.
+
 ### Lottie Animations
 
 Use **dotlottie-web** to play `.lottie` files. Reference: https://github.com/lottiefiles/dotlottie-web. Install via importmap.
