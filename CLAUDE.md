@@ -117,13 +117,94 @@ app/components/public/           ← components for public pages
 app/components/application/      ← components for authenticated pages
 ```
 
+Create a shared base class instead of inheriting directly from `ViewComponent::Base`:
+
 ```ruby
-# app/components/public/card_component.rb
-class Public::CardComponent < ViewComponent::Base
+# app/components/application_component.rb
+class ApplicationComponent < ViewComponent::Base
 end
 
-# app/components/application/card_component.rb
-class Application::CardComponent < ViewComponent::Base
+class Public::NavbarComponent < ApplicationComponent
+end
+```
+
+**Naming:**
+- Always suffix with `Component` — `NavbarComponent`, `CardComponent`
+- Use plural module names — `Public::NavbarComponent`, not `Publics::`
+- Name for what it renders, not what it accepts — `AvatarComponent` over `UserComponent`
+
+**URL & Rails helpers:**
+
+Never call URL helpers inside `initialize` — the view context is not yet available and raises `ViewComponent::ControllerCalledBeforeRenderError`. Use the `helpers` proxy inside methods called during rendering, or directly in the template.
+
+```ruby
+# wrong
+def initialize
+  @path = root_path
+end
+
+# correct
+def nav_path
+  helpers.root_path
+end
+```
+
+Access other Rails helpers via `helpers.<method>` or delegate: `delegate :icon, to: :helpers`.
+
+**Slots:**
+
+Use `renders_one` / `renders_many` to accept multiple content blocks:
+
+```ruby
+class Public::CardComponent < ApplicationComponent
+  renders_one :header
+  renders_many :items
+end
+```
+
+```erb
+<%= render Public::CardComponent.new do |c| %>
+  <% c.with_header { "Title" } %>
+  <% c.with_item { "Item 1" } %>
+<% end %>
+```
+
+Use `slot_name?` to check presence. For slot content that depends on component state, use the `before_render` lifecycle hook — slots are not available in `initialize`.
+
+**Rendering:**
+
+```erb
+<%# in views %>
+<%= render Public::NavbarComponent.new %>
+
+<%# with block content %>
+<%= render Public::CardComponent.new(title: "Hello") do |c| %>
+  ...
+<% end %>
+```
+
+**Testing (RSpec):**
+
+Add to `spec/rails_helper.rb`:
+
+```ruby
+config.include ViewComponent::TestHelpers, type: :component
+config.include Capybara::RSpecMatchers, type: :component
+```
+
+- Use `render_inline` to render a component in specs
+- Prefer asserting on rendered output, not internal methods
+- Use `with_request_url` when the component calls URL helpers
+
+```ruby
+# spec/components/public/navbar_component_spec.rb
+RSpec.describe Public::NavbarComponent, type: :component do
+  it "renders" do
+    with_request_url "/" do
+      render_inline described_class.new
+      expect(page).to have_css("nav")
+    end
+  end
 end
 ```
 
@@ -149,12 +230,31 @@ Use **dotlottie-web** to play `.lottie` files. Reference: https://github.com/lot
 - Pagination: **Pagy**
 - Search / filtering: **Ransack**
 
+## Gemfile Conventions
+
+Always add a comment above each gem explaining what it does and linking to its reference:
+
+```ruby
+# preferred
+# View components for building reusable UI [https://viewcomponent.org]
+gem "view_component"
+
+# avoid
+gem "view_component"
+```
+
 ## Testing
 
-Use **RSpec**. Place specs under `spec/` following the standard convention:
-- `spec/services/` for service objects
-- `spec/repositories/` for repositories
-- `spec/components/` for ViewComponents
+Use **RSpec**. Specs are required for controllers, services, components, and repositories.
+
+| Source | Spec |
+|--------|------|
+| `app/controllers/public/home_controller.rb` | `spec/controllers/public/home_controller_spec.rb` |
+| `app/services/invoices/create_service.rb` | `spec/services/invoices/create_service_spec.rb` |
+| `app/components/public/navbar_component.rb` | `spec/components/public/navbar_component_spec.rb` |
+| `app/repositories/invoice_repository.rb` | `spec/repositories/invoice_repository_spec.rb` |
+
+Use **FactoryBot** for test data and **Faker** for generating fake values. Do not use fixtures.
 
 ## Architecture Notes
 
