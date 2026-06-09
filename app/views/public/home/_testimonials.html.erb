@@ -1,11 +1,11 @@
-<section id="testimonials" class="max-w-7xl mx-auto py-20">
+<section id="testimonials" class="max-w-7xl mx-auto px-4 py-10 md:py-20">
   <div class="border border-gray-800 rounded py-8 px-6 shadow-md bg-white flex flex-col space-y-6">
-    <div class="flex flex-col space-y-4 w-1/2">
+    <div class="flex flex-col space-y-4 w-full md:w-1/2">
       <span class="w-fit bg-red-200 px-2 font-semibold text-gray-800">Testimonials</span>
-      <h2 class="text-4xl font-bold text-gray-800">What Our Clients Say</h2>
-      <p class="text-gray-600 text-lg">Real feedback from clients who have trusted us to deliver their digital solutions.</p>
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-800">What Our Clients Say</h2>
+      <p class="text-gray-600 text-base md:text-lg">Real feedback from clients who have trusted us to deliver their digital solutions.</p>
     </div>
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <%= render Public::TestimonialCardComponent.new(
         quote: "The Algobyte team is highly professional and responsive. The system they built is stable, secure, and truly aligned with our business needs.",
         name: "Irfan",

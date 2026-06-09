@@ -1,25 +1,23 @@
-<section id="why-choose-us" class="max-w-7xl mx-auto py-20">
+<section id="why-choose-us" class="max-w-7xl mx-auto px-4 py-10 md:py-20">
   <div class="flex flex-col space-y-6">
-    <div class="flex flex-col space-y-4 w-1/2 items-end text-right ml-auto">
+    <div class="flex flex-col space-y-4 w-full md:w-1/2 md:items-end md:text-right md:ml-auto">
       <span class="w-fit bg-orange-200 px-2 font-semibold text-gray-800">Why Choose Us</span>
-      <h2 class="text-4xl font-bold text-gray-800">Built on Trust, Driven by Results</h2>
-      <p class="text-gray-600 text-lg">We don't just write code — we build lasting partnerships. Here's what sets us apart.</p>
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-800">Built on Trust, Driven by Results</h2>
+      <p class="text-gray-600 text-base md:text-lg">We don't just write code — we build lasting partnerships. Here's what sets us apart.</p>
     </div>
-    <div class="grid grid-cols-2 gap-6">
-      <div class="flex items-center justify-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="hidden md:flex items-center justify-center">
         <canvas
           data-controller="lottie"
           data-lottie-src-value="<%= asset_path('animation-3.lottie') %>"
           class="w-full h-full">
         </canvas>
       </div>
-      <div class="flex flex-col space-y-6">
-        <div class="flex flex-col gap-3">
-          <%= render Public::FeatureItemComponent.new(icon: "award", title: "Professionalism", description: "Prioritizing structured, responsible, and reliable quality work in every project we take on.") %>
-          <%= render Public::FeatureItemComponent.new(icon: "shield-check", title: "Security", description: "Building systems with security, stability, and performance as the top priority from day one.") %>
-          <%= render Public::FeatureItemComponent.new(icon: "handshake", title: "Trust", description: "Fostering transparent relationships and maintaining client confidence through consistent, reliable results.") %>
-          <%= render Public::FeatureItemComponent.new(icon: "star", title: "Best Practice", description: "Applying industry standards and best practices throughout development to deliver quality digital solutions.") %>
-        </div>
+      <div class="flex flex-col gap-3">
+        <%= render Public::FeatureItemComponent.new(icon: "award", title: "Professionalism", description: "Prioritizing structured, responsible, and reliable quality work in every project we take on.") %>
+        <%= render Public::FeatureItemComponent.new(icon: "shield-check", title: "Security", description: "Building systems with security, stability, and performance as the top priority from day one.") %>
+        <%= render Public::FeatureItemComponent.new(icon: "handshake", title: "Trust", description: "Fostering transparent relationships and maintaining client confidence through consistent, reliable results.") %>
+        <%= render Public::FeatureItemComponent.new(icon: "star", title: "Best Practice", description: "Applying industry standards and best practices throughout development to deliver quality digital solutions.") %>
       </div>
     </div>
   </div>
