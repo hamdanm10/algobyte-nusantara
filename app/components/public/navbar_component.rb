@@ -5,12 +5,12 @@ class Public::NavbarComponent < ApplicationComponent
 
   def links
     [
-      NavLink.new(label: "Home", path: helpers.root_path),
-      NavLink.new(label: "About", path: "#about"),
-      NavLink.new(label: "Services", path: "#services"),
-      NavLink.new(label: "Portfolios", path: "#services"),
-      NavLink.new(label: "Articles", path: "#services"),
-      NavLink.new(label: "Contact", path: "#contact")
+      NavLink.new(label: "Home",       path: helpers.root_path),
+      NavLink.new(label: "About",      path: helpers.about_path),
+      NavLink.new(label: "Services",   path: helpers.services_path),
+      NavLink.new(label: "Portfolios", path: helpers.portfolios_path),
+      NavLink.new(label: "Articles",   path: helpers.articles_path),
+      NavLink.new(label: "Contact",    path: helpers.contact_path)
     ]
   end
 end

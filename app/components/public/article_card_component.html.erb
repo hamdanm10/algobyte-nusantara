@@ -1,0 +1,18 @@
+<div class="border border-gray-800 rounded p-6 flex flex-col gap-4 hover:-rotate-1 hover:shadow-lg hover:shadow-orange-200 transition duration-300">
+  <div class="flex items-center justify-between">
+    <span class="text-xs font-semibold uppercase tracking-widest text-orange-600"><%= @category %></span>
+    <div class="flex items-center gap-1 text-gray-400 text-xs">
+      <%= helpers.lucide_icon("clock", class: "size-3") %>
+      <%= @read_time %>
+    </div>
+  </div>
+  <h3 class="text-gray-800 font-bold text-lg leading-snug"><%= @title %></h3>
+  <p class="text-gray-600 text-sm leading-relaxed flex-1"><%= @excerpt %></p>
+  <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+    <span class="text-xs text-gray-400"><%= @date %></span>
+    <div class="flex items-center gap-1 text-gray-800 text-xs font-medium">
+      Read more
+      <%= helpers.lucide_icon("arrow-right", class: "size-3") %>
+    </div>
+  </div>
+</div>

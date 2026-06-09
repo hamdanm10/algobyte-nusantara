@@ -1,0 +1,29 @@
+<section class="max-w-7xl mx-auto px-4 py-10 md:py-20">
+  <div class="border border-gray-800 rounded py-8 px-6 shadow-md bg-white flex flex-col space-y-6">
+    <div class="flex flex-col space-y-4 w-full md:w-1/2">
+      <span class="w-fit bg-orange-200 px-2 font-semibold text-gray-800">Our Team</span>
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-800">The People Behind Algobyte</h2>
+      <p class="text-gray-600 text-base md:text-lg">A small, focused team of engineers and designers who care deeply about the work they ship.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <%= render Public::TeamMemberComponent.new(
+        name: "Hamdan Midun",
+        role: "Founder & Lead Engineer",
+        initials: "HM",
+        bio: "Full-stack engineer with a focus on building secure and scalable web applications. Leads architecture decisions and client engagements."
+      ) %>
+      <%= render Public::TeamMemberComponent.new(
+        name: "Team Member",
+        role: "Backend Engineer",
+        initials: "TM",
+        bio: "Specializes in server-side systems, API design, and database optimization to keep applications fast and reliable."
+      ) %>
+      <%= render Public::TeamMemberComponent.new(
+        name: "Team Member",
+        role: "UI/UX Designer",
+        initials: "TM",
+        bio: "Crafts intuitive, modern interfaces that balance aesthetics with usability across web and mobile platforms."
+      ) %>
+    </div>
+  </div>
+</section>

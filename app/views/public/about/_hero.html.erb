@@ -1,0 +1,23 @@
+<header class="max-w-7xl mx-auto px-4 flex items-center justify-center min-h-screen relative pt-20">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+    <div class="flex flex-col items-start justify-center space-y-8">
+      <div class="rounded px-6 py-1 bg-white border border-gray-800 text-gray-800 text-xs flex gap-1 items-center uppercase shadow-md">
+        <%= lucide_icon("building-2", class: "size-5", 'stroke-width' => '1.5') %>
+        <span>About Algobyte</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-gray-800">We Are a <span class="underline decoration-orange-600">Team</span> of Passionate <span class="underline decoration-orange-600">Builders</span></h1>
+      <p class="text-base md:text-lg text-gray-600">Algobyte Teknologi Nusantara is a technology company dedicated to building secure, scalable, and smart digital solutions. We partner with businesses across Indonesia to turn complex challenges into production-ready software.</p>
+      <div class="flex flex-wrap gap-4">
+        <%= link_to "Our Services", "/#services", class: "inline-block bg-white text-gray-800 border border-gray-800 px-6 py-3 rounded transition duration-300 hover:-rotate-5 hover:shadow-lg hover:shadow-orange-600" %>
+        <%= link_to "Get in Touch", "#contact", class: "inline-block bg-white text-gray-800 border border-gray-800 px-6 py-3 rounded transition duration-300 hover:-rotate-5 hover:shadow-lg hover:shadow-orange-600" %>
+      </div>
+    </div>
+    <div class="hidden md:block h-full">
+      <canvas
+        data-controller="lottie"
+        data-lottie-src-value="<%= asset_path('animation-1.lottie') %>"
+        class="h-full w-full">
+      </canvas>
+    </div>
+  </div>
+</header>

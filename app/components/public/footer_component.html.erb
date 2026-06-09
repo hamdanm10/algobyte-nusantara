@@ -9,38 +9,38 @@
         <p class="text-gray-600 text-sm leading-relaxed">A technology company dedicated to building secure, scalable, and smart digital solutions for businesses across Indonesia.</p>
         <div class="flex gap-3 mt-2">
           <a href="#" class="border border-gray-800 rounded w-9 h-9 flex items-center justify-center hover:shadow-md hover:shadow-orange-600 transition duration-300">
-            <%= lucide_icon("instagram", class: "text-gray-800 size-4") %>
+            <%= helpers.lucide_icon("instagram", class: "text-gray-800 size-4") %>
           </a>
           <a href="#" class="border border-gray-800 rounded w-9 h-9 flex items-center justify-center hover:shadow-md hover:shadow-orange-600 transition duration-300">
-            <%= lucide_icon("linkedin", class: "text-gray-800 size-4") %>
+            <%= helpers.lucide_icon("linkedin", class: "text-gray-800 size-4") %>
           </a>
           <a href="#" class="border border-gray-800 rounded w-9 h-9 flex items-center justify-center hover:shadow-md hover:shadow-orange-600 transition duration-300">
-            <%= lucide_icon("github", class: "text-gray-800 size-4") %>
+            <%= helpers.lucide_icon("github", class: "text-gray-800 size-4") %>
           </a>
         </div>
       </div>
       <div class="flex flex-col gap-4">
         <span class="text-gray-800 font-semibold text-sm uppercase tracking-widest">Company</span>
         <div class="flex flex-col gap-2">
-          <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">About Us</a>
-          <a href="#services" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Services</a>
-          <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Portfolio</a>
-          <a href="#why-choose-us" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Why Choose Us</a>
+          <%= link_to "About Us",   about_path,      class: "text-gray-600 text-sm hover:text-gray-800 transition duration-300" %>
+          <%= link_to "Services",   services_path,   class: "text-gray-600 text-sm hover:text-gray-800 transition duration-300" %>
+          <%= link_to "Portfolio",  portfolios_path, class: "text-gray-600 text-sm hover:text-gray-800 transition duration-300" %>
+          <%= link_to "Articles",   articles_path,   class: "text-gray-600 text-sm hover:text-gray-800 transition duration-300" %>
         </div>
       </div>
       <div class="flex flex-col gap-4">
         <span class="text-gray-800 font-semibold text-sm uppercase tracking-widest">Contact</span>
         <div class="flex flex-col gap-2">
           <a href="mailto:hello@algobyte.id" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300 flex items-center gap-2">
-            <%= lucide_icon("mail", class: "text-gray-800 size-3.5") %>
+            <%= helpers.lucide_icon("mail", class: "text-gray-800 size-3.5") %>
             hello@algobyte.id
           </a>
           <a href="https://wa.me/62" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300 flex items-center gap-2">
-            <%= lucide_icon("phone", class: "text-gray-800 size-3.5") %>
+            <%= helpers.lucide_icon("phone", class: "text-gray-800 size-3.5") %>
             +62 xxx xxxx xxxx
           </a>
           <span class="text-gray-600 text-sm flex items-center gap-2">
-            <%= lucide_icon("map-pin", class: "text-gray-800 size-3.5") %>
+            <%= helpers.lucide_icon("map-pin", class: "text-gray-800 size-3.5") %>
             Indonesia
           </span>
         </div>

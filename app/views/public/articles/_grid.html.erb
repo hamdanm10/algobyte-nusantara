@@ -1,0 +1,52 @@
+<section class="max-w-7xl mx-auto px-4 py-10 md:py-20">
+  <div class="border border-gray-800 rounded py-8 px-6 shadow-md bg-white flex flex-col space-y-6">
+    <div class="flex flex-col space-y-4 w-full md:w-1/2">
+      <span class="w-fit bg-red-200 px-2 font-semibold text-gray-800">Latest Articles</span>
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-800">What We've Been Writing About</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <%= render Public::ArticleCardComponent.new(
+        title: "Why We Chose Ruby on Rails for Our Client Projects",
+        category: "Engineering",
+        excerpt: "Rails remains one of the most productive frameworks for shipping production software fast. Here's why we keep choosing it for client projects in 2024.",
+        date: "May 2025",
+        read_time: "5 min read"
+      ) %>
+      <%= render Public::ArticleCardComponent.new(
+        title: "Tailwind CSS v4: What Changed and Why It Matters",
+        category: "Frontend",
+        excerpt: "Tailwind v4 rewrites the configuration model entirely. We cover what's new, what broke, and how we migrated our projects without a headache.",
+        date: "April 2025",
+        read_time: "7 min read"
+      ) %>
+      <%= render Public::ArticleCardComponent.new(
+        title: "Structuring a Rails App for Long-Term Maintainability",
+        category: "Architecture",
+        excerpt: "Fat models and thin controllers is a starting point, not an answer. We share the service and repository patterns we use to keep Rails apps maintainable at scale.",
+        date: "March 2025",
+        read_time: "8 min read"
+      ) %>
+      <%= render Public::ArticleCardComponent.new(
+        title: "Building Secure Web Applications: A Practical Checklist",
+        category: "Security",
+        excerpt: "Security isn't a feature you add at the end. We break down the checks we run on every project before it ships — from OWASP basics to Rails-specific pitfalls.",
+        date: "February 2025",
+        read_time: "10 min read"
+      ) %>
+      <%= render Public::ArticleCardComponent.new(
+        title: "Hotwire in Production: Lessons from Real Projects",
+        category: "Engineering",
+        excerpt: "Turbo and Stimulus handle more than most developers expect. We share patterns we've discovered after using Hotwire across multiple production applications.",
+        date: "January 2025",
+        read_time: "6 min read"
+      ) %>
+      <%= render Public::ArticleCardComponent.new(
+        title: "Deploying Rails with Kamal: A Practical Guide",
+        category: "DevOps",
+        excerpt: "Kamal makes zero-downtime deploys accessible without Kubernetes complexity. We walk through our actual production setup from registry to container.",
+        date: "December 2024",
+        read_time: "9 min read"
+      ) %>
+    </div>
+  </div>
+</section>

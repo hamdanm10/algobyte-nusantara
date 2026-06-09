@@ -1,0 +1,17 @@
+<section class="max-w-7xl mx-auto px-4 py-10 md:py-20">
+  <div class="border border-gray-800 rounded py-8 px-6 shadow-md bg-white flex flex-col space-y-6">
+    <div class="flex flex-col space-y-4 w-full md:w-1/2">
+      <span class="w-fit bg-amber-200 px-2 font-semibold text-gray-800">Services</span>
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-800">Everything You Need to Go Digital</h2>
+      <p class="text-gray-600 text-base md:text-lg">We handle the full lifecycle — from idea and design to development, launch, and ongoing maintenance.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <%= render Public::ServiceCardComponent.new(icon: "code", title: "Software Development", description: "Building secure, stable, and structured software systems and applications tailored to your business needs.") %>
+      <%= render Public::ServiceCardComponent.new(icon: "hard-drive", title: "IT Infrastructure Optimization", description: "Managing and optimizing technology infrastructure to be efficient, reliable, and supportive of business growth.") %>
+      <%= render Public::ServiceCardComponent.new(icon: "palette", title: "UI/UX Design Optimization", description: "Designing intuitive, modern, and consistent user interfaces and experiences across all platforms.") %>
+      <%= render Public::ServiceCardComponent.new(icon: "smartphone", title: "Android/iOS Development", description: "Developing native and cross-platform mobile applications that are responsive and optimal across various devices.") %>
+      <%= render Public::ServiceCardComponent.new(icon: "globe", title: "Web Application Development", description: "Building modern, fast, secure, and scalable web applications to support digital business processes.") %>
+      <%= render Public::ServiceCardComponent.new(icon: "wrench", title: "Full Maintenance Support", description: "Comprehensive maintenance services to maintain the security, stability, and performance of your systems.") %>
+    </div>
+  </div>
+</section>
