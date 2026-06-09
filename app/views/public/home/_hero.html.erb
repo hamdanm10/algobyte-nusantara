@@ -1,0 +1,28 @@
+<header class="max-w-7xl mx-auto flex items-center justify-center h-screen relative">
+  <div class="grid grid-cols-2 gap-6">
+    <div class="flex flex-col items-start justify-center space-y-8">
+      <div class="rounded px-6 py-1 bg-white border border-gray-800 text-gray-800 text-xs flex gap-1 items-center uppercase shadow-md">
+        <%= lucide_icon("rocket", class: "size-5", 'stroke-width' => '1.5') %>
+        <span>Trusted Software Partner</span>
+      </div>
+      <h1 class="text-5xl font-bold text-gray-800">We Build <span class="underline decoration-orange-600">Secure,</span> <span class="underline decoration-orange-600">Scalable</span> & Smart Digital Solutions</h1>
+      <p class="text-lg text-gray-600">Build your application with a modern technology stack, great design, fast performance, and robust security. We're here to help you take your app from concept to production, or if your company is interested in collaborating with us, we'd love to work together.</p>
+      <div class="flex gap-4">
+        <%= link_to "Explore Now", "#", class: "inline-block bg-white text-gray-800 border border-gray-800 px-6 py-3 rounded transition duration-300 hover:-rotate-5 hover:shadow-lg hover:shadow-orange-600" %>
+        <%= link_to "View Our Work", "#", class: "inline-block bg-white text-gray-800 border border-gray-800 px-6 py-3 rounded transition duration-300 hover:-rotate-5 hover:shadow-lg hover:shadow-orange-600" %>
+      </div>
+    </div>
+    <div class="h-full">
+      <canvas
+        data-controller="lottie"
+        data-lottie-src-value="<%= asset_path('animation-1.lottie') %>"
+        class="h-full w-full">
+      </canvas>
+    </div>
+  </div>
+  <div class="absolute bottom-20 inset-x-0 flex flex-col items-center gap-2">
+    <div class="border border-gray-800 rounded w-8 h-8 flex items-center justify-center animate-bounce">
+      <%= lucide_icon("chevron-down", class: "text-gray-800 size-4") %>
+    </div>
+  </div>
+</header>

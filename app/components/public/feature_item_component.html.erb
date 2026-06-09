@@ -1,0 +1,9 @@
+<div class="flex items-start gap-4 border border-gray-800 rounded px-4 py-4 hover:-rotate-1 hover:shadow-lg hover:shadow-orange-200 transition duration-300">
+  <div class="bg-white rounded border border-gray-800 w-10 h-10 shrink-0 flex items-center justify-center">
+    <%= helpers.lucide_icon(@icon, class: "text-gray-800 size-4") %>
+  </div>
+  <div>
+    <h4 class="text-gray-800 font-bold"><%= @title %></h4>
+    <p class="text-sm text-gray-600"><%= @description %></p>
+  </div>
+</div>

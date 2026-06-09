@@ -1,0 +1,24 @@
+<section id="services" class="max-w-7xl mx-auto py-20">
+  <div class="border border-gray-800 rounded py-8 px-6 shadow-md bg-white flex flex-col space-y-6">
+    <div class="flex flex-col space-y-4 w-1/2">
+      <span class="w-fit bg-amber-200 px-2 font-semibold text-gray-800">Services</span>
+      <h2 class="text-4xl font-bold text-gray-800">Integrated Digital & Technology Services</h2>
+      <p class="text-gray-600 text-lg">We build your application with a modern technology stack, great design, fast performance, and robust security - transforming your ideas into production ready digital solutions that drive business growth and efficiency.</p>
+    </div>
+    <div class="grid grid-cols-4 gap-6">
+      <div class="col-span-2 border border-gray-800 rounded p-4">
+        <canvas
+          data-controller="lottie"
+          data-lottie-src-value="<%= asset_path('animation-2.lottie') %>"
+          class="h-full w-full">
+        </canvas>
+      </div>
+      <%= render Public::ServiceCardComponent.new(icon: "code", title: "Software Development", description: "Building secure, stable, and structured software systems and applications tailored to business needs.") %>
+      <%= render Public::ServiceCardComponent.new(icon: "hard-drive", title: "IT Infrastructure Optimization", description: "Managing and optimizing technology infrastructure to be efficient, reliable, and supportive of business growth.") %>
+      <%= render Public::ServiceCardComponent.new(icon: "palette", title: "UI/UX Design Optimization", description: "Designing intuitive, modern, and consistent user interfaces and experiences across all platforms.") %>
+      <%= render Public::ServiceCardComponent.new(icon: "smartphone", title: "Android/iOS Application Development", description: "Developing native and cross-platform mobile applications that are responsive and optimal across various devices.") %>
+      <%= render Public::ServiceCardComponent.new(icon: "globe", title: "Web Application Development", description: "Building modern, fast, secure, and scalable web applications to support digital business processes.") %>
+      <%= render Public::ServiceCardComponent.new(icon: "wrench", title: "Full Maintenance Support", description: "Comprehensive maintenance services to maintain the security, stability, and performance of systems on an ongoing basis.") %>
+    </div>
+  </div>
+</section>

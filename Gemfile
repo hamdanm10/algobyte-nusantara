@@ -76,3 +76,6 @@ gem "tailwindcss-rails", "~> 4.4"
 
 # View components for building reusable UI [https://viewcomponent.org]
 gem "view_component"
+
+# Icon library for Rails [https://github.com/heyvito/lucide-rails]
+gem "lucide-rails", "~> 0.7.4"

@@ -106,9 +106,24 @@ get "about", to: "public/pages#about"
 
 `root` is the one exception — it must always be defined explicitly.
 
-### View Components
+### View Components vs ERB Partials
 
-UI components are built with **ViewComponent**. Do not write presentation logic directly in ERB partials.
+**Use ViewComponent** only for UI elements that are genuinely reusable across multiple pages or contexts — things like buttons, navbars, cards, badges, form fields, and modals.
+
+**Use ERB partials** (`_name.html.erb`) for page-specific sections that belong to a single view — things like a hero section, a features section, a CTA block, or any other one-off layout piece on a page.
+
+```
+# reusable UI element → ViewComponent
+app/components/public/navbar_component.rb
+app/components/public/button_component.rb
+
+# page-specific section → ERB partial
+app/views/public/home/_hero.html.erb
+app/views/public/home/_features.html.erb
+app/views/public/home/_cta.html.erb
+```
+
+The rule: if the same UI element appears (or likely will appear) in more than one place, make it a component. If it only ever lives in one view, keep it a partial.
 
 Components are grouped by context to keep public and authenticated styles separate:
 

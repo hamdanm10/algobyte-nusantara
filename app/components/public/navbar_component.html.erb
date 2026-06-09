@@ -1,15 +1,11 @@
-<nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
+<nav class="bg-white fixed w-full z-20 top-0 inset-s-0 border-b border-gray-200">
   <div class="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4">
     <%= link_to helpers.root_path, class: "flex items-center space-x-3 rtl:space-x-reverse" do %>
       <%= image_tag "logo/color.png", class: "w-12" %>
       <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-800">AlgoByte</span>
     <% end %>
-
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 focus:outline-none">
-        Get started
-      </button>
-
+      <%= link_to "Start a Project", "#", class: "inline-block bg-white text-gray-800 border border-gray-800 px-6 py-3 rounded transition duration-300 hover:-rotate-5 hover:shadow-lg hover:shadow-orange-600" %>
       <button data-collapse-toggle="navbar-cta" type="button"
               class="inline-flex items-center p-2 w-9 h-9 justify-center text-sm text-gray-600 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
               aria-controls="navbar-cta" aria-expanded="false">
@@ -19,7 +15,6 @@
         </svg>
       </button>
     </div>
-
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
       <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
         <% links.each do |link| %>

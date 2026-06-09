@@ -19,7 +19,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-grid bg-white min-h-screen">
+  <body class="bg-grid bg-white min-h-screen relative">
+    <svg
+      data-controller="paper-plane"
+      class="absolute inset-0 -z-10 pointer-events-none w-full h-full overflow-visible"
+    ></svg>
     <%= render(Public::NavbarComponent.new) %>
     <%= yield %>
   </body>
