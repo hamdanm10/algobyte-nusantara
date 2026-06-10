@@ -3,26 +3,32 @@
     <div class="flex flex-col space-y-4 w-full md:w-1/2">
       <span class="w-fit bg-orange-200 px-2 font-semibold text-gray-800">Our Team</span>
       <h2 class="text-2xl md:text-4xl font-bold text-gray-800">The People Behind Algobyte</h2>
-      <p class="text-gray-600 text-base md:text-lg">A small, focused team of engineers and designers who care deeply about the work they ship.</p>
+      <p class="text-gray-600 text-base md:text-lg">A focused team of professionals who care deeply about quality, security, and long-term client success.</p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <%= render Public::TeamMemberComponent.new(
-        name: "Hamdan Midun",
-        role: "Founder & Lead Engineer",
+        name: "Hamdan Miftahul Husna",
+        role: "Direktur Utama",
         initials: "HM",
-        bio: "Full-stack engineer with a focus on building secure and scalable web applications. Leads architecture decisions and client engagements."
+        bio: "Leads the company's strategic direction with a focus on innovation, business growth, and long-term client satisfaction."
       ) %>
       <%= render Public::TeamMemberComponent.new(
-        name: "Team Member",
-        role: "Backend Engineer",
-        initials: "TM",
-        bio: "Specializes in server-side systems, API design, and database optimization to keep applications fast and reliable."
+        name: "Rizki Dimulya",
+        role: "Manajer Teknis & Produk",
+        initials: "RD",
+        bio: "Ensures technical quality and product direction through structured system architecture and best development standards."
       ) %>
       <%= render Public::TeamMemberComponent.new(
-        name: "Team Member",
-        role: "UI/UX Designer",
-        initials: "TM",
-        bio: "Crafts intuitive, modern interfaces that balance aesthetics with usability across web and mobile platforms."
+        name: "Zen Mustaofa",
+        role: "Manajer Operasional",
+        initials: "ZM",
+        bio: "Manages operational workflows and team coordination to ensure every project is delivered on time and to standard."
+      ) %>
+      <%= render Public::TeamMemberComponent.new(
+        name: "Herdi Rudian",
+        role: "Manajer Keuangan",
+        initials: "HR",
+        bio: "Manages company finances with accountability and transparency to support healthy and sustainable business growth."
       ) %>
     </div>
   </div>
