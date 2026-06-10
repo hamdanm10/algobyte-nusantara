@@ -13,4 +13,8 @@ class Public::NavbarComponent < ApplicationComponent
       NavLink.new(label: "Contact",    path: helpers.contact_path)
     ]
   end
+
+  def active?(path)
+    helpers.current_page?(path)
+  end
 end

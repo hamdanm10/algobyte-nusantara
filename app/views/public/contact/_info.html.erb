@@ -1,28 +1,44 @@
 <section class="max-w-7xl mx-auto px-4 py-10 md:py-20">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="border border-gray-800 rounded p-6 flex flex-col gap-4">
-      <div class="bg-white rounded border border-gray-800 w-12 h-12 flex items-center justify-center">
-        <%= lucide_icon("mail", class: "text-gray-800") %>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="flex flex-col gap-4">
+      <div class="border border-gray-800 rounded p-6 flex flex-col gap-4">
+        <div class="bg-white rounded border border-gray-800 w-12 h-12 flex items-center justify-center">
+          <%= lucide_icon("mail", class: "text-gray-800") %>
+        </div>
+        <h3 class="text-gray-800 font-bold text-lg">Email</h3>
+        <p class="text-gray-600 text-sm">Send us an email and we'll reply within one business day.</p>
+        <a href="mailto:hello@algobyte.id" class="text-gray-800 font-medium text-sm hover:text-orange-600 transition duration-300">hello@algobyte.id</a>
       </div>
-      <h3 class="text-gray-800 font-bold text-lg">Email</h3>
-      <p class="text-gray-600 text-sm">Send us an email and we'll reply within one business day.</p>
-      <a href="mailto:hello@algobyte.id" class="text-gray-800 font-medium text-sm hover:text-orange-600 transition duration-300">hello@algobyte.id</a>
+      <div class="border border-gray-800 rounded p-6 flex flex-col gap-4">
+        <div class="bg-white rounded border border-gray-800 w-12 h-12 flex items-center justify-center">
+          <%= lucide_icon("phone", class: "text-gray-800") %>
+        </div>
+        <h3 class="text-gray-800 font-bold text-lg">WhatsApp</h3>
+        <p class="text-gray-600 text-sm">Prefer to chat? Reach us directly on WhatsApp for faster responses.</p>
+        <a href="https://wa.me/62" class="text-gray-800 font-medium text-sm hover:text-orange-600 transition duration-300">+62 xxx xxxx xxxx</a>
+      </div>
+      <div class="border border-gray-800 rounded p-6 flex flex-col gap-4">
+        <div class="bg-white rounded border border-gray-800 w-12 h-12 flex items-center justify-center">
+          <%= lucide_icon("map-pin", class: "text-gray-800") %>
+        </div>
+        <h3 class="text-gray-800 font-bold text-lg">Location</h3>
+        <p class="text-gray-600 text-sm">We're based in Indonesia and work with clients across the country.</p>
+        <span class="text-gray-800 font-medium text-sm">Indonesia</span>
+      </div>
     </div>
-    <div class="border border-gray-800 rounded p-6 flex flex-col gap-4">
-      <div class="bg-white rounded border border-gray-800 w-12 h-12 flex items-center justify-center">
-        <%= lucide_icon("phone", class: "text-gray-800") %>
-      </div>
-      <h3 class="text-gray-800 font-bold text-lg">WhatsApp</h3>
-      <p class="text-gray-600 text-sm">Prefer to chat? Reach us directly on WhatsApp for faster responses.</p>
-      <a href="https://wa.me/62" class="text-gray-800 font-medium text-sm hover:text-orange-600 transition duration-300">+62 xxx xxxx xxxx</a>
-    </div>
-    <div class="border border-gray-800 rounded p-6 flex flex-col gap-4">
-      <div class="bg-white rounded border border-gray-800 w-12 h-12 flex items-center justify-center">
-        <%= lucide_icon("map-pin", class: "text-gray-800") %>
-      </div>
-      <h3 class="text-gray-800 font-bold text-lg">Location</h3>
-      <p class="text-gray-600 text-sm">We're based in Indonesia and work with clients across the country.</p>
-      <span class="text-gray-800 font-medium text-sm">Indonesia</span>
+    <%# Replace src with your Google Maps embed URL: Maps → Share → Embed a map %>
+    <div class="border border-gray-800 rounded overflow-hidden shadow-md min-h-64">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253840.65295570373!2d106.6894056!3d-6.2297465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Indonesia!5e0!3m2!1sid!2sid!4v1749999999999!5m2!1sid!2sid"
+        width="100%"
+        height="100%"
+        class="min-h-64 lg:h-full"
+        style="border: 0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Algobyte location on Google Maps">
+      </iframe>
     </div>
   </div>
 </section>

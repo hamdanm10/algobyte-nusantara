@@ -1,0 +1,84 @@
+<section class="max-w-7xl mx-auto px-4 pb-10 md:pb-20">
+  <div class="flex flex-col space-y-6">
+    <div class="flex flex-col space-y-4 max-w-xl">
+      <span class="w-fit bg-amber-200 px-2 font-semibold text-gray-800">FAQ</span>
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-800">Frequently Asked Questions</h2>
+      <p class="text-gray-600 text-base md:text-lg">Quick answers to the questions we hear most often.</p>
+    </div>
+    <div class="flex flex-col divide-y divide-gray-800 border border-gray-800 rounded shadow-md bg-white">
+
+      <div data-controller="accordion" class="px-6 py-5">
+        <button data-action="click->accordion#toggle" class="flex items-center justify-between w-full gap-4 text-left">
+          <span class="font-semibold text-gray-800">How long does a typical project take?</span>
+          <span data-accordion-target="icon" class="shrink-0 text-gray-800 transition-transform duration-300">
+            <%= lucide_icon("plus", class: "size-5") %>
+          </span>
+        </button>
+        <div data-accordion-target="content">
+          <p class="pt-4 pb-1 text-gray-600 text-sm leading-relaxed">It depends on the scope. A simple web application usually takes 4–8 weeks. A more complex platform with integrations and custom workflows can take 3–6 months. We'll give you a realistic estimate after our discovery call.</p>
+        </div>
+      </div>
+
+      <div data-controller="accordion" class="px-6 py-5">
+        <button data-action="click->accordion#toggle" class="flex items-center justify-between w-full gap-4 text-left">
+          <span class="font-semibold text-gray-800">Do you work with clients outside of Indonesia?</span>
+          <span data-accordion-target="icon" class="shrink-0 text-gray-800 transition-transform duration-300">
+            <%= lucide_icon("plus", class: "size-5") %>
+          </span>
+        </button>
+        <div data-accordion-target="content">
+          <p class="pt-4 pb-1 text-gray-600 text-sm leading-relaxed">Yes. While we're based in Indonesia, we work with clients remotely across Southeast Asia and beyond. All communication and project management is handled online.</p>
+        </div>
+      </div>
+
+      <div data-controller="accordion" class="px-6 py-5">
+        <button data-action="click->accordion#toggle" class="flex items-center justify-between w-full gap-4 text-left">
+          <span class="font-semibold text-gray-800">What information do I need to start a project?</span>
+          <span data-accordion-target="icon" class="shrink-0 text-gray-800 transition-transform duration-300">
+            <%= lucide_icon("plus", class: "size-5") %>
+          </span>
+        </button>
+        <div data-accordion-target="content">
+          <p class="pt-4 pb-1 text-gray-600 text-sm leading-relaxed">You don't need a fully defined spec to reach out. A general idea of what you want to build, who your users are, and any constraints you have (timeline, budget, existing systems) is enough to get started. We'll help shape the rest.</p>
+        </div>
+      </div>
+
+      <div data-controller="accordion" class="px-6 py-5">
+        <button data-action="click->accordion#toggle" class="flex items-center justify-between w-full gap-4 text-left">
+          <span class="font-semibold text-gray-800">Do you provide support after launch?</span>
+          <span data-accordion-target="icon" class="shrink-0 text-gray-800 transition-transform duration-300">
+            <%= lucide_icon("plus", class: "size-5") %>
+          </span>
+        </button>
+        <div data-accordion-target="content">
+          <p class="pt-4 pb-1 text-gray-600 text-sm leading-relaxed">Yes. We offer ongoing maintenance and support packages. Most of our clients stay with us long-term — we handle updates, bug fixes, performance improvements, and new feature development.</p>
+        </div>
+      </div>
+
+      <div data-controller="accordion" class="px-6 py-5">
+        <button data-action="click->accordion#toggle" class="flex items-center justify-between w-full gap-4 text-left">
+          <span class="font-semibold text-gray-800">How is pricing structured?</span>
+          <span data-accordion-target="icon" class="shrink-0 text-gray-800 transition-transform duration-300">
+            <%= lucide_icon("plus", class: "size-5") %>
+          </span>
+        </button>
+        <div data-accordion-target="content">
+          <p class="pt-4 pb-1 text-gray-600 text-sm leading-relaxed">We work on a fixed-price basis for well-defined projects, and time-and-materials for ongoing or evolving work. After an initial conversation, we'll recommend the model that makes most sense for your situation.</p>
+        </div>
+      </div>
+
+      <div data-controller="accordion" class="px-6 py-5">
+        <button data-action="click->accordion#toggle" class="flex items-center justify-between w-full gap-4 text-left">
+          <span class="font-semibold text-gray-800">How do I get started?</span>
+          <span data-accordion-target="icon" class="shrink-0 text-gray-800 transition-transform duration-300">
+            <%= lucide_icon("plus", class: "size-5") %>
+          </span>
+        </button>
+        <div data-accordion-target="content">
+          <p class="pt-4 pb-1 text-gray-600 text-sm leading-relaxed">Fill in the contact form above or reach out directly via email or WhatsApp. We'll schedule a short discovery call to understand your needs and figure out the best path forward together.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
