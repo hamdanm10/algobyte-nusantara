@@ -1,6 +1,9 @@
 root "public/home#index"
-get "about",      to: "public/about#index",      as: :about
-get "services",   to: "public/services#index",   as: :services
-get "portfolios", to: "public/portfolios#index", as: :portfolios
-get "articles",   to: "public/articles#index",   as: :articles
-get "contact",    to: "public/contact#index",    as: :contact
+
+scope module: :public do
+  resource :about,      only: :show, path: "about",      controller: :about
+  resource :services,   only: :show, path: "services",   controller: :services
+  resource :portfolios, only: :show, path: "portfolios", controller: :portfolios
+  resource :articles,   only: :show, path: "articles",   controller: :articles
+  resource :contact,    only: :show, path: "contact",    controller: :contact
+end

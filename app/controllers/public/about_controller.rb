@@ -1,4 +1,4 @@
 class Public::AboutController < Public::PublicController
-  def index
+  def show
   end
 end

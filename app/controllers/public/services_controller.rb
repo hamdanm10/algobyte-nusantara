@@ -1,4 +1,4 @@
 class Public::ServicesController < Public::PublicController
-  def index
+  def show
   end
 end

@@ -1,4 +1,4 @@
 class Public::ContactController < Public::PublicController
-  def index
+  def show
   end
 end

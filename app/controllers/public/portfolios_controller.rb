@@ -1,4 +1,4 @@
 class Public::PortfoliosController < Public::PublicController
-  def index
+  def show
   end
 end
